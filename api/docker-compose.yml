@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - SECRET_KEY=your_secret_key_change_in_production
+      - DATABASE_URL=sqlite:///./todos.db 
