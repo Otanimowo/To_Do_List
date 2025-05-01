@@ -117,9 +117,28 @@ docker-compose up
 - [x] Python CLI Application (Original)
 - [x] Refactored CLI Application (Iteration 1)
 - [x] REST API with FastAPI (Iteration 2)
-- [ ] Web Frontend
+- [ ] Web Frontend (in progress)
 - [ ] Mobile App
 - [ ] Deployment
+
+### Web Frontend Progress
+The React/TypeScript web frontend is currently in development. Progress includes:
+- Project setup with React and TypeScript
+- Component structure planning
+- Authentication components (Login/Register)
+- Task management components
+
+To run the web frontend in development mode:
+1. Navigate to the web directory
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+4. The web app will be available at http://localhost:3000
 
 ## Author
 Olushola Tanimowo

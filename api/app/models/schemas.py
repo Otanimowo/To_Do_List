@@ -72,7 +72,6 @@ class Task(TaskBase):
 
     class Config:
         """Pydantic config."""
-        orm_mode = True
         from_attributes = True
 
 
@@ -127,7 +126,6 @@ class User(UserBase):
 
     class Config:
         """Pydantic config."""
-        orm_mode = True
         from_attributes = True
 
 

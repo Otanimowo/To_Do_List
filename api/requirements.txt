@@ -1,12 +1,14 @@
+# API updated to be compatible with Pydantic V2 (orm_mode -> from_attributes)
 fastapi==0.103.1
 uvicorn==0.23.2
 pydantic==2.3.0
-sqlalchemy==2.0.20
+sqlalchemy==2.0.38
 databases[sqlite]==0.8.0
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
 aiosqlite==0.19.0
+email_validator==2.1.1
 pytest==7.4.2
 pytest-asyncio==0.21.1
 httpx==0.24.1 
