@@ -1,147 +1,128 @@
 # To-Do List Application
 
-A full-stack to-do list application with web and mobile interfaces.
+A full-stack web application for managing tasks with a React frontend and FastAPI backend.
 
 ## Project Structure
 
 ```
 To_Do_List/
-├── python/                  # Original Python CLI application
-│   ├── To_Do_List.py
-│   └── tasks.json
-├── To_Do_List/             # Refactored modular CLI application
-│   ├── todo_app/           # Python package
-│   │   ├── models/         # Data models
-│   │   ├── views/          # User interface
-│   │   ├── controllers/    # Application logic
-│   │   ├── utils/          # Utilities
-│   │   └── config/         # Configuration
-│   ├── tests/              # Unit tests
-│   ├── main.py             # Entry point
-│   └── setup.py            # Package setup
-├── api/                    # REST API with FastAPI
-│   ├── app/                # API application
-│   │   ├── models/         # Database models
-│   │   ├── routes/         # API endpoints
-│   │   ├── auth/           # Authentication
-│   │   └── utils/          # Utilities
-│   ├── tests/              # API tests
-│   ├── run.py              # Run script
-│   └── requirements.txt    # Dependencies
-├── backend/                # Node.js/TypeScript backend (planned)
-├── web/                    # React/TypeScript web frontend (planned)
-└── mobile/                 # React Native/TypeScript mobile app (planned)
+├── api/                 # FastAPI backend
+│   ├── app/             # API application code
+│   │   ├── models/      # Database models and schemas
+│   │   ├── routers/     # API route definitions
+│   │   ├── services/    # Business logic
+│   │   └── main.py      # FastAPI application entry point
+│   └── run.py           # API server startup script
+├── web/                 # Frontend
+│   └── todo-app/        # React frontend application
+├── To_Do_List/          # Python command-line application
+│   └── To_Do_List.py    # Original CLI version of the app
+└── README.md            # This file
 ```
 
 ## Features
 
-### Original Python CLI Application
-- View your to-do list with task completion status
-- Add new tasks to your list
-- Remove tasks from your list
-- Mark tasks as completed or uncompleted
-- Data persistence (tasks are saved between sessions)
-- User-friendly interface with error handling
+- User authentication (register, login, logout)
+- Create, read, update, and delete tasks
+- Mark tasks as completed/uncompleted
+- Filter tasks by status and other criteria
+- User profile management
+- Responsive UI design
 
-### Refactored CLI Application (Iteration 1)
-- All features from the original CLI application
-- Improved modularity with MVC architecture
-- Enhanced task model with priorities, due dates, categories, and notes
-- Automatic backups
-- Configurable settings
-- More robust error handling
-- Comprehensive unit tests
+## Technology Stack
 
-### REST API (Iteration 2)
-- RESTful endpoints for task management
-- User authentication with JWT
-- User registration and profile management
-- Task filtering by status, category, and priority
-- Comprehensive API documentation with Swagger UI
-- Database integration with SQLAlchemy
-- Containerization with Docker
+### Backend
+- **FastAPI**: Modern, fast web framework for API development
+- **SQLAlchemy**: SQL toolkit and ORM for database access
+- **Pydantic**: Data validation and settings management
+- **JWT**: JSON Web Tokens for authentication
+- **Uvicorn**: ASGI server implementation for running the backend
 
-### Planned Features (Coming Soon)
-- Web frontend with React/TypeScript
-- Mobile app with React Native/TypeScript
-- Cross-platform data sync
-- Offline support
-- Real-time updates
+### Frontend
+- **React**: JavaScript library for building user interfaces
+- **TypeScript**: Typed JavaScript for better developer experience
+- **Material-UI**: React component library for consistent design
+- **React Router**: Navigation and routing for React applications
+- **Axios**: HTTP client for API requests
+- **Context API**: For state management across components
 
-## Setup Instructions
+## Setup and Installation
 
-### Python CLI Application (Original)
-1. Navigate to the python directory
-2. Run the application:
-   ```bash
-   python To_Do_List.py
+### Prerequisites
+- Python 3.8+
+- Node.js 16+
+- npm or yarn
+
+### Backend Setup
+1. Navigate to the API directory:
+   ```
+   cd To_Do_List/api
    ```
 
-### Refactored CLI Application (Iteration 1)
-1. Navigate to the To_Do_List directory
-2. Install the package in development mode:
-   ```bash
-   pip install -e .
+2. Create a virtual environment:
    ```
-3. Run the application:
-   ```bash
-   todo
-   ```
-   Or directly:
-   ```bash
-   python main.py
+   python -m venv venv
    ```
 
-### REST API (Iteration 2)
-1. Navigate to the api directory
-2. Install dependencies:
-   ```bash
+3. Activate the virtual environment:
+   - Windows: `venv\Scripts\activate`
+   - macOS/Linux: `source venv/bin/activate`
+
+4. Install dependencies:
+   ```
    pip install -r requirements.txt
    ```
-3. Run the API:
-   ```bash
+
+5. Run the API server:
+   ```
    python run.py
    ```
-4. The API will be available at http://localhost:8000
-5. API documentation is available at:
-   - Swagger UI: http://localhost:8000/docs
-   - ReDoc: http://localhost:8000/redoc
+   
+   The API will be available at http://localhost:8000
 
-Or using Docker:
-```bash
-cd api
-docker-compose up
-```
+### Frontend Setup
+1. Navigate to the web app directory:
+   ```
+   cd To_Do_List/web/todo-app
+   ```
 
-## Development Status
-- [x] Python CLI Application (Original)
-- [x] Refactored CLI Application (Iteration 1)
-- [x] REST API with FastAPI (Iteration 2)
-- [ ] Web Frontend (in progress)
-- [ ] Mobile App
-- [ ] Deployment
-
-### Web Frontend Progress
-The React/TypeScript web frontend is currently in development. Progress includes:
-- Project setup with React and TypeScript
-- Component structure planning
-- Authentication components (Login/Register)
-- Task management components
-
-To run the web frontend in development mode:
-1. Navigate to the web directory
 2. Install dependencies:
-   ```bash
+   ```
    npm install
    ```
+   
+   For PowerShell users with Execution Policy restrictions, use:
+   ```
+   powershell -ExecutionPolicy Bypass -Command "npm install"
+   ```
+
 3. Start the development server:
-   ```bash
+   ```
    npm start
    ```
-4. The web app will be available at http://localhost:3000
+   
+   For PowerShell users with Execution Policy restrictions, use:
+   ```
+   powershell -ExecutionPolicy Bypass -Command "npm start"
+   ```
+   
+   The web app will be available at http://localhost:3000
 
-## Author
-Olushola Tanimowo
+## Original CLI Application
+
+The project also includes the original command-line interface version located in the `To_Do_List/To_Do_List.py` file. To run it:
+
+```
+cd To_Do_List
+python To_Do_List.py
+```
+
+## API Documentation
+
+Once the backend is running, API documentation is available at:
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
 
 ## License
-This project is open source and available under the MIT License. 
+
+MIT 

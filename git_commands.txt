@@ -1,0 +1,40 @@
+# Git Commands for To-Do List Project
+
+# 1. Initialize Git repository (if not already initialized)
+git init
+
+# 2. Add all files to staging area (excluding those in .gitignore)
+git add .
+
+# 3. Create initial commit
+git commit -m "Initial commit: Full-stack To-Do List application"
+
+# 4. Create main branch (if not already on main)
+git branch -M main
+
+# 5. Add GitHub remote repository (replace with your actual GitHub repository URL)
+# If you haven't created a GitHub repository yet, create one at https://github.com/new
+git remote add origin https://github.com/yourusername/to-do-list.git
+
+# 6. Push to GitHub
+git push -u origin main
+
+# Additional useful Git commands:
+
+# Check status of your repository
+git status
+
+# View commit history
+git log --oneline
+
+# Create and switch to a new feature branch
+git checkout -b feature/new-feature
+
+# Switch back to main branch
+git checkout main
+
+# Merge a feature branch into main
+git merge feature/new-feature
+
+# Pull latest changes from GitHub
+git pull origin main 

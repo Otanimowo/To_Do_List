@@ -1,46 +1,104 @@
-# Getting Started with Create React App
+# To-Do List React Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive React frontend for the To-Do List application.
+
+## Technologies Used
+
+- **React 19**: Latest version of the React library
+- **TypeScript**: For type-safe code
+- **React Router**: For navigation between pages
+- **Material UI**: For responsive and beautiful UI components
+- **Axios**: For API communication
+- **Context API**: For state management
+
+## Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Auth/            # Authentication components
+│   ├── Layout/          # Layout components
+│   └── Tasks/           # Task-related components
+├── contexts/            # React contexts for state management
+│   ├── AuthContext.tsx  # Authentication state
+│   └── TaskContext.tsx  # Task management state
+├── hooks/               # Custom React hooks
+├── pages/               # Page components
+├── services/            # API services
+│   └── api.ts           # API client and endpoints
+├── types/               # TypeScript type definitions
+├── utils/               # Utility functions
+└── App.tsx              # Main application component
+```
+
+## Features
+
+- User authentication (login/register)
+- Task management (create, read, update, delete)
+- Task filtering and sorting
+- Responsive design for mobile and desktop
+- Protected routes for authenticated users
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
+   ```
+   npm install
+   ```
+   
+   For PowerShell users with Execution Policy restrictions:
+   ```
+   powershell -ExecutionPolicy Bypass -Command "npm install"
+   ```
+
+2. Start the development server:
+   ```
+   npm start
+   ```
+   
+   For PowerShell users with Execution Policy restrictions:
+   ```
+   powershell -ExecutionPolicy Bypass -Command "npm start"
+   ```
+   
+   Or use the included start.ps1 script:
+   ```
+   .\start.ps1
+   ```
+
+3. Build for production:
+   ```
+   npm run build
+   ```
+
+## API Connection
+
+The frontend connects to the FastAPI backend by default at `http://localhost:8000`. This can be configured in the `.env` file or through the proxy setting in `package.json`.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start`: Start the development server
+- `npm test`: Run tests
+- `npm run build`: Build for production
+- `npm run eject`: Eject from Create React App
 
-### `npm start`
+## Notes for Development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Material UI components require proper theme setup in `App.tsx`
+- Authentication uses JWT stored in localStorage
+- Protected routes are managed through the `useProtectedRoute` hook
+- API calls should use the centralized API client in `services/api.ts`
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React Documentation](https://reactjs.org/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
+- [Material UI Documentation](https://mui.com/)
+- [React Router Documentation](https://reactrouter.com/)
