@@ -43,6 +43,7 @@ export interface TaskContextType extends TaskState {
   deleteTask: (id: string) => Promise<void>;
   completeTask: (id: string) => Promise<Task>;
   uncompleteTask: (id: string) => Promise<Task>;
+  toggleTaskCompletion: (id: string) => Promise<Task>;
   setFilter: (filter: TaskFilter) => void;
 }
 

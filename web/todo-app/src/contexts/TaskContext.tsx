@@ -174,6 +174,14 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
+  // Toggle task completion status
+  const toggleTaskCompletion = async (id: string): Promise<Task> => {
+    const task = state.tasks.find(t => t.id === id);
+    if (!task) throw new Error('Task not found');
+    
+    return task.completed ? uncompleteTask(id) : completeTask(id);
+  };
+
   // Set filter for tasks
   const setFilter = (filter: TaskFilter) => {
     setState({ ...state, filter });
@@ -189,13 +197,14 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     deleteTask,
     completeTask,
     uncompleteTask,
+    toggleTaskCompletion,
     setFilter,
   };
 
   return <TaskContext.Provider value={value}>{children}</TaskContext.Provider>;
 };
 
-// Hook for easy context use
+// Hook to use the task context
 export function useTasks() {
   const context = useContext(TaskContext);
   if (context === undefined) {
